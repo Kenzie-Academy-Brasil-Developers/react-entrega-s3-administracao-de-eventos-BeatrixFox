@@ -11,3 +11,5 @@ export const ListBeers = ({ listDrinks, isEvent }) => {
     </Container>
   );
 };
+
+export default ListBeers;

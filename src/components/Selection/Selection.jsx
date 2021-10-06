@@ -36,3 +36,5 @@ export const Selection = ({ drink }) => {
     </Container>
   );
 };
+
+export default Selection;

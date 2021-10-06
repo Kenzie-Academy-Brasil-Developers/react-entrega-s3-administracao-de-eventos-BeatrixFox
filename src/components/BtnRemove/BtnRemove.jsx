@@ -30,3 +30,5 @@ export const BtnRemove = ({ text, event, drink }) => {
     </Container>
   );
 };
+
+export default BtnRemove;

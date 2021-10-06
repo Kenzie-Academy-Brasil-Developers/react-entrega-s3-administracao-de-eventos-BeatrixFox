@@ -1,9 +1,9 @@
 import { Route, Switch } from "react-router";
-import Home from "./../pages/Home/home";
-import Graduation from "./../pages/Graduation/Graduation";
-import Wedding from "./../pages/Wedding/Wedding";
-import Confraternization from "./../pages/Confraternization/Confraternization";
-import SelectionBeers from "./../pages/SelectionBeers/SelectionBeers";
+import Home from "../pages/Home/HomePg";
+import Graduation from "../pages/Graduation/GraduationPg";
+import Wedding from "../pages/Wedding/WeddingPg";
+import Confraternization from "../pages/Confraternization/ConfraternizationPg";
+import SelectionBeers from "../pages/SelectionBeers/SelectionBeersPg";
 
 const Routes = () => {
   return (
@@ -11,16 +11,16 @@ const Routes = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/SelectionBeers">
+      <Route exact path="/SelectionBeersPg">
         <SelectionBeers />
       </Route>
-      <Route exact path="/Wedding">
+      <Route exact path="/WeddingPg">
         <Wedding />
       </Route>
-      <Route exact path="/Graduation">
+      <Route exact path="/GraduationPg">
         <Graduation />
       </Route>
-      <Route exact path="/Confraternization">
+      <Route exact path="/ConfraternizationPg">
         <Confraternization />
       </Route>
     </Switch>
