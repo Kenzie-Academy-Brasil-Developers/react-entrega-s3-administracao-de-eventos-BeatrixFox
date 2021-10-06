@@ -1,12 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 export const CartConfraternizationContext = createContext([]);
 
 export const CartConfraternizationProvider = ({ children }) => {
-  const [cartConfraternization, setCartConfraternization] = useState([]);
+  const [cartConfraternization, setCartConfraternization] = useState(
+    localStorage.getItem("{cartConfraternization}") || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem(
+      "cartConfraternization",
+      JSON.stringify(cartConfraternization)
+    );
+  }, [cartConfraternization]);
 
   const addToCartConfraternization = (item) => {
-    setCartConfraternization([...cartConfraternization, item]);
+    cartConfraternization.some((product) => item.id === product.id)
+      ? console.log("item já consta na lista")
+      : setCartConfraternization([...cartConfraternization, item]);
   };
 
   const removeToCartConfraternization = (item) => {
@@ -28,3 +39,6 @@ export const CartConfraternizationProvider = ({ children }) => {
     </CartConfraternizationContext.Provider>
   );
 };
+
+export const useCartConfraternization = () =>
+  useContext(CartConfraternizationContext);

@@ -1,12 +1,20 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 export const CartGraduationContext = createContext([]);
 
 export const CartGraduationProvider = ({ children }) => {
-  const [cartGraduation, setCartGraduation] = useState([]);
+  const [cartGraduation, setCartGraduation] = useState(
+    localStorage.getItem("{cartGraduation}") || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("cartGraduation", JSON.stringify(cartGraduation));
+  }, [cartGraduation]);
 
   const addToCartGraduation = (item) => {
-    setCartGraduation([...cartGraduation, item]);
+    cartGraduation.some((product) => item.id === product.id)
+      ? console.log("item já consta na lista")
+      : setCartGraduation([...cartGraduation, item]);
   };
 
   const removeToCartGraduation = (item) => {
@@ -24,3 +32,5 @@ export const CartGraduationProvider = ({ children }) => {
     </CartGraduationContext.Provider>
   );
 };
+
+export const useCartGraduation = () => useContext(CartGraduationContext);

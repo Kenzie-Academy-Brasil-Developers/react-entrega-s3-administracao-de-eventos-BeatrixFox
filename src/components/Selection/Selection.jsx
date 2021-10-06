@@ -5,16 +5,11 @@ import { CartGraduationContext } from "../../providers/graduation/graduation";
 import { CartConfraternizationContext } from "../../providers/confraternization/confraternization";
 
 export const Selection = ({ drink }) => {
-  const {
-    cartConfraternization,
-    addToCartConfraternization,
-    removeToCartConfraternization,
-  } = useContext(CartConfraternizationContext);
-
-  const { CartWedding, addToCartWedding, removeToCartWedding } =
-    useContext(CartWeddingContext);
-  const { CartGraduation, addToCartGraduation, removeToCartGraduation } =
-    useContext(CartGraduationContext);
+  const { addToCartConfraternization } = useContext(
+    CartConfraternizationContext
+  );
+  const { addToCartWedding } = useContext(CartWeddingContext);
+  const { addToCartGraduation } = useContext(CartGraduationContext);
 
   const handlerClickGraduation = (drink) => {
     addToCartGraduation(drink);
@@ -30,9 +25,11 @@ export const Selection = ({ drink }) => {
 
   return (
     <Container>
-      <button onClick={() => handlerClickGraduation(drink)}></button>
-      <button onClick={() => handlerClickConfraternization(drink)}></button>
-      <button onClick={() => handlerClickWedding(drink)}></button>
+      <button onClick={() => handlerClickGraduation(drink)}>Formatura</button>
+      <button onClick={() => handlerClickConfraternization(drink)}>
+        Confraternização
+      </button>
+      <button onClick={() => handlerClickWedding(drink)}>Casamento</button>
     </Container>
   );
 };

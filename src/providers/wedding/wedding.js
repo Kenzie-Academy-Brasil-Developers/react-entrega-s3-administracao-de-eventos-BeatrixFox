@@ -1,12 +1,20 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 export const CartWeddingContext = createContext([]);
 
 export const CartWeddingProvider = ({ children }) => {
-  const [cartWedding, setCartWedding] = useState([]);
+  const [cartWedding, setCartWedding] = useState(
+    localStorage.getItem("{cartWedding}") || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("cartWedding", JSON.stringify(cartWedding));
+  }, [cartWedding]);
 
   const addToCartWedding = (item) => {
-    setCartWedding([...cartWedding, item]);
+    cartWedding.some((product) => item.id === product.id)
+      ? console.log("item já consta na lista")
+      : setCartWedding([...cartWedding, item]);
   };
 
   const removeToCartWedding = (item) => {
@@ -24,3 +32,5 @@ export const CartWeddingProvider = ({ children }) => {
     </CartWeddingContext.Provider>
   );
 };
+
+export const useCartWedding = () => useContext(CartWeddingContext);

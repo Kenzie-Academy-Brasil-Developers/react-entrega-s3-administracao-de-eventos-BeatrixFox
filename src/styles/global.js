@@ -16,28 +16,30 @@ export default createGlobalStyle`
 	--details-color: #A0FFF4;
 	--font-details-color: #4E5555;
 	--icons-color: #C85311;
+	--oxford-blue: #00043aff;
+	--up-maroon: #800016ff;
+	--sizzling-red: #ff3355ff;
+	--beau-blue: #b5cfe3ff;
+	--usafa-blue: #004e89ff;
+	--royal-blue-dark: #002962ff;
+	--firebrick: #c00021ff;
+	--ruby-red: #a0001cff;
+	--xiketic: #140003ff;
+	--alice-blue: #f1f5f8ff;
 
 }
 body{
 	background-color: var(---back-blue);
 	color: var(--black);
 }
-body,input{
-	font-family: "PT Serif", serif;
-	font-size: 1rem;
-}
+
 input{
 	font-family: "Roboto Mono", monospace;
 	font-size: 1rem;
 }
-h1,h2,h3,h4{
-	font-family: "Wallpoet", monospace;
-	font-weight: 400;
-}
+
 button{
 	cursor: pointer;
 }
-a{
-	text-decoration: none;
-}
+
 `;

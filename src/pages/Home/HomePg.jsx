@@ -1,14 +1,31 @@
-import { useContext } from "react";
-import { CartCatalogoContext } from "../../providers/catalogo/catalogo";
+import { useHistory } from "react-router";
 
 export const Home = () => {
-  const { catalogo } = useContext(CartCatalogoContext);
+  const history = useHistory();
 
-  console.log(catalogo);
+  const handlerClickPagOne = () => {
+    history.push("/SelectionBeersPg");
+  };
+
+  const handlerClickPagTwo = () => {
+    history.push("/WeddingPg");
+  };
+
+  const handlerClickPagThree = () => {
+    history.push("/GraduationPg");
+  };
+
+  const handlerClickPagFour = () => {
+    history.push("/ConfraternizationPg");
+  };
 
   return (
     <>
       <h1>Home</h1>
+      <button onClick={handlerClickPagOne}>Catalogo de Bebidas</button>
+      <button onClick={handlerClickPagTwo}>Evento de Casamento</button>
+      <button onClick={handlerClickPagThree}>Evento de Formatura</button>
+      <button onClick={handlerClickPagFour}>Evento de Confraternização</button>
     </>
   );
 };

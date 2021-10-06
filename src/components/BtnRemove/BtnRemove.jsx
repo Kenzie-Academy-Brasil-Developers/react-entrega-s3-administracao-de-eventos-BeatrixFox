@@ -5,16 +5,11 @@ import { CartGraduationContext } from "../../providers/graduation/graduation";
 import { CartConfraternizationContext } from "../../providers/confraternization/confraternization";
 
 export const BtnRemove = ({ text, event, drink }) => {
-  const {
-    cartConfraternization,
-    addToCartConfraternization,
-    removeToCartConfraternization,
-  } = useContext(CartConfraternizationContext);
-
-  const { CartWedding, addToCartWedding, removeToCartWedding } =
-    useContext(CartWeddingContext);
-  const { CartGraduation, addToCartGraduation, removeToCartGraduation } =
-    useContext(CartGraduationContext);
+  const { removeToCartConfraternization } = useContext(
+    CartConfraternizationContext
+  );
+  const { removeToCartWedding } = useContext(CartWeddingContext);
+  const { removeToCartGraduation } = useContext(CartGraduationContext);
 
   const handlerClick = (event, drink) => {
     event === "confraternization"
