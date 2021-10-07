@@ -4,10 +4,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 250px auto 120px;
+  margin: 280px auto 120px;
   position: relative;
   div {
-    margin: 20px auto;
+    margin: 25px auto;
+    padding: 18px 5px;
   }
 `;
 
@@ -24,19 +25,21 @@ export const Section = styled.section`
   text-align: center;
   h1 {
     margin: 20px auto;
+    font-size: 2.5rem;
   }
   ul {
     margin: 15px auto;
     li {
-      list-style: none;
+      list-style: square;
       text-align: left;
+      margin: 5px;
     }
   }
   button {
     background-color: var(--green-blue-crayola);
     color: var(--xiketic);
-    height: 50px;
-    width: 200px;
+    height: 40px;
+    width: 170px;
     font-size: 18px;
     font-weight: bold;
     margin: 5px auto;
@@ -44,7 +47,7 @@ export const Section = styled.section`
   }
   @media (min-width: 768px) {
     h1 {
-      font-size: 35px;
+      font-size: 50px;
     }
   }
 `;

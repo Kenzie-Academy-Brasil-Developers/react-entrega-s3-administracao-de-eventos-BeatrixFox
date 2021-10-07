@@ -12,11 +12,18 @@ export const Wedding = () => {
     history.push("/");
   };
 
+  const handlerClickDrinks = () => {
+    history.push("/SelectionBeersPg");
+  };
+
   return (
     <Container>
       <Section>
         <h1>Casamento</h1>
-        <button onClick={handlerClickHome}>Ir para Home</button>
+        <section>
+          <button onClick={handlerClickHome}>Ir para Home</button>
+          <button onClick={handlerClickDrinks}>Ir para Catalogo</button>
+        </section>
       </Section>
       <ListBeers listDrinks={cartWedding} isEvent={true} name={"wedding"} />
     </Container>

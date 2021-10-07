@@ -4,10 +4,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 250px auto 120px;
+  margin: 190px auto 120px;
   position: relative;
   div {
-    margin: 20px auto;
+    margin: 25px auto;
+    padding: 18px 5px;
+  }
+  @media (min-width: 768px) {
+    div {
+      margin: 20px auto;
+    }
   }
 `;
 
@@ -24,20 +30,30 @@ export const Section = styled.section`
   text-align: center;
   h1 {
     margin: 20px auto;
+    font-size: 2.5rem;
   }
-  button {
-    background-color: var(--green-blue-crayola);
-    color: var(--xiketic);
-    height: 50px;
-    width: 200px;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 5px auto;
-    border-radius: 20px;
+  section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    button {
+      background-color: var(--green-blue-crayola);
+      color: var(--xiketic);
+      height: 40px;
+      width: 170px;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 5px auto;
+      border-radius: 20px;
+    }
   }
   @media (min-width: 768px) {
     h1 {
       font-size: 35px;
+    }
+    section {
+      flex-direction: row;
+      width: 600px;
     }
   }
 `;

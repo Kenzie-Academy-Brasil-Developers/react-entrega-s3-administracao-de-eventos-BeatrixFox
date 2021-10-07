@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { toast } from "react-toastify";
 
 export const CartGraduationContext = createContext([]);
 
@@ -13,7 +14,7 @@ export const CartGraduationProvider = ({ children }) => {
 
   const addToCartGraduation = (item) => {
     cartGraduation.some((product) => item.id === product.id)
-      ? console.log("item já consta na lista")
+      ? toast.error("item já consta na lista")
       : setCartGraduation([...cartGraduation, item]);
   };
 
