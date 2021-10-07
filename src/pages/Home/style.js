@@ -40,6 +40,10 @@ export const BtnEvents = styled.button`
   font-weight: bold;
   margin: 10px;
   border-radius: 20px;
+  &:hover {
+    background-color: var(--prussian-blue);
+    color: var(--cultured);
+  }
 `;
 
 export const BtnCatalogo = styled.button`
@@ -51,4 +55,7 @@ export const BtnCatalogo = styled.button`
   font-weight: bold;
   margin: 10px;
   border-radius: 20px;
+  &:hover {
+    background-color: var(--rosewood);
+  }
 `;

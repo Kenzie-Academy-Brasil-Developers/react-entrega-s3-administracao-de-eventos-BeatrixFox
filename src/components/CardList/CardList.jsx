@@ -12,7 +12,7 @@ export const CardList = ({ drink }) => {
           <p>{drink.description}</p>
         </details>
         <p>
-          <span>fab.: {drink.first_brewed} </span>{" "}
+          <span>Fab.: {drink.first_brewed} </span>{" "}
           <span> Qnt.: {drink.boil_volume.value} L</span>
         </p>
       </section>

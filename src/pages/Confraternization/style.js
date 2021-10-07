@@ -41,6 +41,10 @@ export const Content = styled.div`
       margin: 5px auto;
       border-radius: 20px;
     }
+    button:hover {
+      background-color: var(--prussian-blue);
+      color: var(--cultured);
+    }
   }
   @media (min-width: 560px) {
     h1 {
