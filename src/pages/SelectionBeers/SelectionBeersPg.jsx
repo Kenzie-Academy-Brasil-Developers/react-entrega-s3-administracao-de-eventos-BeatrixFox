@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useHistory } from "react-router";
-import { Container, Section } from "./style";
+import { Container, Content } from "./style";
 import ListBeers from "../../components/ListBeers/ListBeers";
 import { CartCatalogoContext } from "../../providers/catalogo/catalogo";
 import { useCartConfraternization } from "../../providers/confraternization/confraternization";
@@ -22,16 +22,19 @@ export const SelectionBeers = () => {
 
   return (
     <Container>
-      <Section>
+      <Content>
         <h1>Catalogo de bebidas</h1>
-        <p>Quantidade de bebidas adicionada em cada evento</p>
-        <ul>
-          <li>{cartWedding.length} para Casamento</li>
-          <li>{cartGraduation.length} para Formatura</li>
-          <li>{cartConfraternization.length} para Confraternização</li>
-        </ul>
+        <section>
+          <p>Quantidade de bebidas adicionada em cada evento</p>
+          <ul>
+            <li>{cartWedding.length} para Casamento</li>
+            <li>{cartGraduation.length} para Formatura</li>
+            <li>{cartConfraternization.length} para Confraternização</li>
+          </ul>
+        </section>
+
         <button onClick={handlerClick}>Ir para Home</button>
-      </Section>
+      </Content>
       <div>
         <ListBeers listDrinks={catalogo} isEvent={false} />
       </div>

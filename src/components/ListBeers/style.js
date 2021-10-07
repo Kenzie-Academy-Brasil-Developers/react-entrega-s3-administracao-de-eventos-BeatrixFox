@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.ul`
-  margin: 0;
-  background: lavender;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin: 10px auto;
+  width: 95%;
+  margin: 15px -15px;
+  @media (min-width: 400px) {
+    margin: 10px auto;
+  }
+  @media (min-width: 768px) {
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
 `;
