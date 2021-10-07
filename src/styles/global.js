@@ -9,33 +9,21 @@ export default createGlobalStyle`
 	outline: 0;
 }
 :root{
-	--back-blue: #4C4ADA;
-	--black: #000000;
-	--white: #f5f5f5;
-	--dark-green: #04561B;
-	--details-color: #A0FFF4;
-	--font-details-color: #4E5555;
-	--icons-color: #C85311;
-	--oxford-blue: #00043aff;
-	--up-maroon: #800016ff;
-	--sizzling-red: #ff3355ff;
-	--beau-blue: #b5cfe3ff;
-	--usafa-blue: #004e89ff;
-	--royal-blue-dark: #002962ff;
-	--firebrick: #c00021ff;
-	--ruby-red: #a0001cff;
-	--xiketic: #140003ff;
-	--alice-blue: #f1f5f8ff;
-
+	--xiketic: #121420ff;
+	--rosewood: #65010cff;
+	--venetian-red: #cb1b16ff;
+	--prussian-blue: #033270ff;
+	--cultured: #f2f2f2ff;
+	--sapphire-blue: #1368aaff;
+	--green-blue-crayola: #4091c9ff;
+	--light-cornflower-blue: #9dcee2ff;
+	--dark-salmon: #f29479ff;
+	--tomato: #f26a4fff;
 }
 body{
-	background-color: var(---back-blue);
+	background: rgb(3,50,112);
+	background: linear-gradient(180deg, rgba(3,50,112,1) 0%, rgba(203,27,22,1) 100%);
 	color: var(--black);
-}
-
-input{
-	font-family: "Roboto Mono", monospace;
-	font-size: 1rem;
 }
 
 button{

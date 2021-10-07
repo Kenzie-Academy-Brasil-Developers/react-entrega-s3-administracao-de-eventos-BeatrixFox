@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { toast } from "react-toastify";
 
 export const CartWeddingContext = createContext([]);
 
@@ -13,7 +14,7 @@ export const CartWeddingProvider = ({ children }) => {
 
   const addToCartWedding = (item) => {
     cartWedding.some((product) => item.id === product.id)
-      ? console.log("item já consta na lista")
+      ? toast.error("Item já adicionado ao evento")
       : setCartWedding([...cartWedding, item]);
   };
 

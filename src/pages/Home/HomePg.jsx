@@ -1,4 +1,5 @@
 import { useHistory } from "react-router";
+import { BtnSection, BtnCatalogo, Container, BtnEvents } from "./style";
 
 export const Home = () => {
   const history = useHistory();
@@ -20,13 +21,22 @@ export const Home = () => {
   };
 
   return (
-    <>
-      <h1>Home</h1>
-      <button onClick={handlerClickPagOne}>Catalogo de Bebidas</button>
-      <button onClick={handlerClickPagTwo}>Evento de Casamento</button>
-      <button onClick={handlerClickPagThree}>Evento de Formatura</button>
-      <button onClick={handlerClickPagFour}>Evento de Confraternização</button>
-    </>
+    <Container>
+      <h1>ADM events</h1>
+      <h4>Escolha um evento ou Catalogo de bebidas</h4>
+      <BtnSection>
+        <BtnCatalogo onClick={handlerClickPagOne}>
+          Catalogo de Bebidas
+        </BtnCatalogo>
+        <BtnEvents onClick={handlerClickPagTwo}>Evento de Casamento</BtnEvents>
+        <BtnEvents onClick={handlerClickPagThree}>
+          Evento de Formatura
+        </BtnEvents>
+        <BtnEvents onClick={handlerClickPagFour}>
+          Evento de Confraternização
+        </BtnEvents>
+      </BtnSection>
+    </Container>
   );
 };
 

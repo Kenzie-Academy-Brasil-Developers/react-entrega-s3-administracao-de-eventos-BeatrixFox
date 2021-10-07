@@ -1,5 +1,4 @@
 import Routes from "./routes";
-
 import { Container } from "./style";
 
 function App() {
