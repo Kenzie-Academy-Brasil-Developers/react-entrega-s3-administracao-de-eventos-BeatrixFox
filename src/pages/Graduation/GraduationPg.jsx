@@ -1,5 +1,6 @@
 import { useHistory } from "react-router";
 import ListBeers from "../../components/ListBeers/ListBeers";
+import { Container, Section } from "../Wedding/style";
 import { useCartGraduation } from "./../../providers/graduation/graduation";
 
 export const Graduation = () => {
@@ -11,15 +12,17 @@ export const Graduation = () => {
   };
 
   return (
-    <>
-      <h1>Graduação</h1>
+    <Container>
+      <Section>
+        <h1>Graduação</h1>
+        <button onClick={handlerClickHome}>Ir para Home</button>
+      </Section>
       <ListBeers
         listDrinks={cartGraduation}
         isEvent={true}
         name={"graduation"}
       />
-      <button onClick={handlerClickHome}>Ir para Home</button>
-    </>
+    </Container>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useHistory } from "react-router";
 import ListBeers from "../../components/ListBeers/ListBeers";
+import { Container, Section } from "../Wedding/style";
 import { useCartConfraternization } from "./../../providers/confraternization/confraternization";
 
 export const Confraternization = () => {
@@ -9,16 +10,27 @@ export const Confraternization = () => {
   const handlerClickHome = () => {
     history.push("/");
   };
+
+  const handlerClickDrinks = () => {
+    history.push("/SelectionBeers");
+  };
+
   return (
-    <>
-      <h1>Confraternização</h1>
+    <Container>
+      <Section>
+        <h1>Confraternização</h1>
+        <section>
+          <button onClick={handlerClickHome}>Ir para Home</button>
+          <button onCLick={handlerClickDrinks}>Ir para Catalogo</button>
+        </section>
+      </Section>
+
       <ListBeers
         listDrinks={cartConfraternization}
         isEvent={true}
         name={"confraternization"}
       />
-      <button onClick={handlerClickHome}>Ir para Home</button>
-    </>
+    </Container>
   );
 };
 
