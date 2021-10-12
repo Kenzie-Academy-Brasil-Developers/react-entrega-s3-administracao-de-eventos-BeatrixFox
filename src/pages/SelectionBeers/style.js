@@ -42,16 +42,6 @@ export const Content = styled.section`
     }
   }
 
-  button {
-    background-color: var(--green-blue-crayola);
-    color: var(--xiketic);
-    height: 40px;
-    width: 170px;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 5px auto;
-    border-radius: 20px;
-  }
   @media (min-width: 768px) {
     flex-flow: row wrap;
     h1 {
@@ -62,8 +52,49 @@ export const Content = styled.section`
         margin: 15px 100px;
       }
     }
-    button {
-      align-self: flex-end;
+  }
+`;
+
+export const ListLinks = styled.nav`
+  width: 100%;
+  height: 40px;
+  overflow: scroll;
+
+  ul {
+    display: inline;
+    text-align: justify;
+    width: 80%;
+
+    li {
+      background-color: var(--venetian-red);
+      padding: 5px;
+      margin: 0 20px;
+      border-bottom: 3px solid var(--rosewood);
+      display: block;
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        color: var(--cultured);
+        transition: 0.5s;
+        &:hover {
+          color: var(--prussian-blue);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  @media (min-width: 680px) {
+    background-color: var(--venetian-red);
+    overflow: visible;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      li {
+        border: none;
+        width: 20%;
+        text-align: center;
+      }
     }
   }
 `;

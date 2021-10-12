@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { useHistory } from "react-router";
-import { Container, Content } from "./style";
+import { Container, Content, ListLinks } from "./style";
 import ListBeers from "../../components/ListBeers/ListBeers";
 import { CartCatalogoContext } from "../../providers/catalogo/catalogo";
 import { useCartConfraternization } from "../../providers/confraternization/confraternization";
 import { useCartGraduation } from "../../providers/graduation/graduation";
 import { useCartWedding } from "../../providers/wedding/wedding";
+import { Link } from "react-router-dom";
+import { useState } from "react/cjs/react.development";
 
 export const SelectionBeers = () => {
   const { catalogo } = useContext(CartCatalogoContext);
@@ -13,11 +15,10 @@ export const SelectionBeers = () => {
   const { cartConfraternization } = useCartConfraternization();
   const { cartGraduation } = useCartGraduation();
   const { cartWedding } = useCartWedding();
+  const [isShowList, setIsShowList] = useState(false);
 
-  const history = useHistory();
-
-  const handlerClick = () => {
-    history.push("/");
+  const handlerClickShow = () => {
+    setIsShowList(!isShowList);
   };
 
   return (
@@ -33,7 +34,22 @@ export const SelectionBeers = () => {
           </ul>
         </section>
 
-        <button onClick={handlerClick}>Ir para Home</button>
+        <ListLinks>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/WeddingPg">Casamento</Link>
+            </li>
+            <li>
+              <Link to="/GraduationPg">Formatura</Link>
+            </li>
+            <li>
+              <Link to="/ConfraternizationPg">Confraternização</Link>
+            </li>
+          </ul>
+        </ListLinks>
       </Content>
       <div>
         <ListBeers listDrinks={catalogo} isEvent={false} />
