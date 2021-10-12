@@ -7,7 +7,7 @@ import { useCartConfraternization } from "../../providers/confraternization/conf
 import { useCartGraduation } from "../../providers/graduation/graduation";
 import { useCartWedding } from "../../providers/wedding/wedding";
 import { Link } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 export const SelectionBeers = () => {
   const { catalogo } = useContext(CartCatalogoContext);
